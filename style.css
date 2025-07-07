@@ -160,22 +160,28 @@ body {
 }
 
 
-/* Final Message */
 .final-message {
   margin-top: 30px;
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-  animation-delay: 9.5s;
+  opacity: 1;
+  position: relative;
 }
 
 .line {
   font-family: 'Brush Script MT', cursive;
   font-size: 2.5rem;
   opacity: 0;
+  position: relative;
 }
 
-#line1 { animation: fadeLine 1s forwards; animation-delay: 9.5s; }
-#line2 { animation: fadeLine 1s forwards; animation-delay: 11.5s; }
+#line1 {
+  animation: fadeLine 1s forwards;
+  animation-delay: 10.5s;
+}
+
+#line2 {
+  animation: fadeLine 1s forwards;
+  animation-delay: 12.5s;
+}
 
 @keyframes fadeLine {
   to { opacity: 1; }
@@ -195,19 +201,19 @@ body {
 
 #rose1 {
   left: 30%;
-  animation: bloom 1s 10.5s forwards, float 3s 10.5s infinite ease-in-out;
+  animation: bloom 1s 14.5s forwards, float 3s 14.5s infinite ease-in-out;
 }
 
 #rose2 {
   right: 30%;
-  animation: bloom 1s 12.5s forwards, float 3s 12.5s infinite ease-in-out;
+  animation: bloom 1s 15s forwards, float 3s 15s infinite ease-in-out;
 }
 
 #rose3 {
   top: -40px;
   left: 50%;
   transform: translateX(-50%);
-  animation: bloom 1s 13.5s forwards, float 3s 13.5s infinite ease-in-out;
+  animation: bloom 1s 15.5s forwards, float 3s 15.5s infinite ease-in-out;
 }
 
 @keyframes bloom {
