@@ -1,0 +1,121 @@
+body {
+  background-color: #f8e1f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+.word {
+  font-size: 3rem;
+  font-weight: bold;
+  opacity: 0;
+  transform: scale(0);
+  animation: zoomIn 1s forwards;
+}
+
+#word2 { animation-delay: 1.5s; }
+#word3 { animation-delay: 3s; }
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.cake-container {
+  margin-top: 30px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(100px);
+  animation: cakeUp 1s forwards;
+  animation-delay: 4.5s;
+}
+
+@keyframes cakeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cake {
+  width: 100px;
+  height: 80px;
+  background-color: pink;
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+.cake-face {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 25%;
+}
+
+.eye {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.smile {
+  width: 30px;
+  height: 10px;
+  border-bottom: 3px solid black;
+  border-radius: 50%;
+  transform: rotate(0deg);
+}
+
+.candle {
+  width: 10px;
+  height: 30px;
+  background-color: red;
+  position: absolute;
+  top: -30px;
+  left: 45%;
+}
+
+.fireworks {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: absolute;
+  opacity: 0;
+}
+
+#firework1 { top: -50px; left: 20%; animation: pop 0.5s 5s forwards; }
+#firework2 { top: -60px; left: 70%; animation: pop 0.5s 5.5s forwards; }
+#firework3 { top: -40px; left: 50%; animation: pop 0.5s 6s forwards; }
+
+@keyframes pop {
+  to {
+    opacity: 1;
+    transform: scale(2);
+  }
+}
+
+.final-message {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 7s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
