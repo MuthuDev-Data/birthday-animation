@@ -44,20 +44,17 @@
   <div class="line" id="line1">Please take care cactus</div>
   <div class="line" id="line2">Trust me</div>
 
-  <!-- Roses Section -->
   <div class="roses">
     <div class="rose" id="rose1">&#x1F339;</div>
     <div class="rose" id="rose2">&#x1F339;</div>
     <div class="rose" id="rose3">&#x1F339;</div>
   </div>
 
-  <!-- Yes/No Buttons -->
   <div class="response-buttons" id="response-buttons" style="margin-top: 20px; opacity: 0;">
     <button id="yesButton">Yes</button>
     <button id="noButton">No</button>
   </div>
 
-  <!-- Result Images -->
   <div id="result" style="margin-top: 20px;"></div>
 </div>
 
@@ -67,29 +64,46 @@
 
   <script src="script.js"></script>
   <script>
-  // Hide cake before showing final message
-  setTimeout(() => {
-    document.getElementById('cake-container').classList.add('hide-cake');
-  }, 10 * 1000); // Hide cake at 10 seconds
-</script>
-  <script>
-  // Show buttons automatically
   setTimeout(() => {
     document.getElementById('response-buttons').style.opacity = '1';
   }, 14000);
 
-  // Yes button click
-  document.getElementById('yesButton').addEventListener('click', () => {
-    document.getElementById('result').innerHTML = '<h3>Here’s your chocolate! 🍫🍫🍫</h3><img src="https://i.imgur.com/1Q9Z1Z1.png" width="150">';
+  const yesButton = document.getElementById('yesButton');
+  const noButton = document.getElementById('noButton');
+  const result = document.getElementById('result');
+
+  let growInterval;
+  let yesScale = 1.5;
+  let noScale = 1.5;
+
+  yesButton.style.transform = `scale(${yesScale})`;
+  noButton.style.transform = `scale(${noScale})`;
+
+  yesButton.addEventListener('click', () => {
+    clearInterval(growInterval);
+    result.innerHTML = '<h3>Here’s your chocolate! 🍫🍫🍫</h3>';
     document.getElementById('response-buttons').style.display = 'none';
   });
 
-  // No button click
-  document.getElementById('noButton').addEventListener('click', () => {
-    document.getElementById('result').innerHTML = '<h3>Baby is crying, please give me a chance! 😢</h3><img src="https://i.imgur.com/Z9q1H0P.png" width="150">';
-    document.getElementById('response-buttons').style.display = 'none';
+  noButton.addEventListener('click', () => {
+    result.innerHTML = '<h3>Baby is crying! 😢 Please say YES!</h3>';
+    if (!growInterval) {
+      growInterval = setInterval(() => {
+        yesScale += 0.05;
+        noScale -= 0.02;
+
+        yesButton.style.transform = `scale(${yesScale})`;
+        noButton.style.transform = `scale(${noScale})`;
+
+        if (yesScale >= 10) {  // When YES button is huge
+          clearInterval(growInterval);
+          result.innerHTML = '<h3>Okay, YES is taking over! Please click it now! 😂</h3>';
+        }
+      }, 100);
+    }
   });
 </script>
+
 
 </body>
 
