@@ -1,8 +1,8 @@
 const bgMusic = document.getElementById('bgMusic');
 const words = [
-    "🎉 Happy 🎉",
-    "🎂 Birthday 🎂",
-    "🌈 Kolanthai 🌈"
+    " Happy ",
+    " Birthday ",
+    " Kolanthai "
 ];
 let currentIndex = 0;
 
