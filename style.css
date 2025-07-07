@@ -10,6 +10,7 @@ body {
 
 .container {
   text-align: center;
+  position: relative;
 }
 
 .word {
@@ -21,19 +22,9 @@ body {
   opacity: 0;
 }
 
-#word1 {
-  animation: showHide 2s forwards;
-}
-
-#word2 {
-  animation: showHide 2s forwards;
-  animation-delay: 2.2s;
-}
-
-#word3 {
-  animation: showHide 2s forwards;
-  animation-delay: 4.4s;
-}
+#word1 { animation: showHide 2s forwards; }
+#word2 { animation: showHide 2s forwards; animation-delay: 2.2s; }
+#word3 { animation: showHide 2s forwards; animation-delay: 4.4s; }
 
 @keyframes showHide {
   0% { opacity: 0; transform: translateX(-50%) scale(0); }
@@ -44,102 +35,51 @@ body {
 
 .cake-container {
   margin-top: 30px;
-  position: relative;
   opacity: 0;
-  transform: translateY(100px);
-  animation: cakeUp 1s forwards;
+  animation: cakeBounce 1s forwards;
   animation-delay: 6.8s;
 }
 
-@keyframes cakeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.cake-emoji {
+  font-size: 5rem;
 }
 
-.cake {
-  width: 100px;
-  height: 80px;
-  background-color: pink;
-  margin: 0 auto;
-  border-radius: 10px;
-  position: relative;
+@keyframes cakeBounce {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
-.cake-face {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+/* Fireworks */
+.firework {
   position: absolute;
-  width: 100%;
-  top: 25%;
-}
-
-.eye {
   width: 10px;
   height: 10px;
-  background-color: black;
   border-radius: 50%;
+  background-color: transparent;
 }
 
-.smile {
-  width: 30px;
-  height: 10px;
-  border-bottom: 3px solid black;
-  border-radius: 50%;
+#firework1 { top: 20%; left: 20%; animation: explode 0.6s 8s forwards; }
+#firework2 { top: 15%; left: 70%; animation: explode 0.6s 8.5s forwards; }
+#firework3 { top: 30%; left: 50%; animation: explode 0.6s 9s forwards; }
+
+@keyframes explode {
+  0% { box-shadow: 0 0 0 red, 0 0 0 yellow, 0 0 0 blue; }
+  50% { box-shadow: -30px -30px 0 red, 30px -30px 0 yellow, 0 30px 0 blue; opacity: 1; }
+  100% { box-shadow: -30px -30px 0 red, 30px -30px 0 yellow, 0 30px 0 blue; opacity: 0; }
 }
 
-.candle {
-  width: 10px;
-  height: 30px;
-  background-color: red;
-  position: absolute;
-  top: -30px;
-  left: 45%;
-}
-
-.fireworks {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: yellow;
-  position: absolute;
-  opacity: 0;
-}
-
-#firework1 {
-  top: -50px; left: 20%;
-  animation: pop 0.5s 8s forwards;
-}
-
-#firework2 {
-  top: -60px; left: 70%;
-  animation: pop 0.5s 8.5s forwards;
-}
-
-#firework3 {
-  top: -40px; left: 50%;
-  animation: pop 0.5s 9s forwards;
-}
-
-@keyframes pop {
-  0% { opacity: 0; transform: scale(0); }
-  50% { opacity: 1; transform: scale(2); }
-  100% { opacity: 0; transform: scale(0); }
-}
-
+/* Final Message */
 .final-message {
   margin-top: 30px;
   opacity: 0;
   animation: fadeIn 1s forwards;
   animation-delay: 9.5s;
-  position: relative;
 }
 
 .line {
   font-family: 'Brush Script MT', cursive;
-  font-size: 2rem;
+  font-size: 2.5rem;
   opacity: 0;
 }
 
@@ -150,24 +90,21 @@ body {
   to { opacity: 1; }
 }
 
+/* Roses */
+.roses {
+  margin-top: 20px;
+  position: relative;
+}
+
 .rose {
-  width: 20px;
-  height: 20px;
-  background-color: red;
-  border-radius: 50%;
+  font-size: 2rem;
   position: absolute;
   opacity: 0;
 }
 
-#rose1 {
-  left: 30%;
-  animation: bloom 1s 10.5s forwards;
-}
-
-#rose2 {
-  right: 30%;
-  animation: bloom 1s 12.5s forwards;
-}
+#rose1 { left: 30%; animation: bloom 1s 10.5s forwards; }
+#rose2 { right: 30%; animation: bloom 1s 12.5s forwards; }
+#rose3 { top: -40px; left: 50%; transform: translateX(-50%); animation: bloom 1s 13.5s forwards; }
 
 @keyframes bloom {
   0% { opacity: 0; transform: scale(0); }
