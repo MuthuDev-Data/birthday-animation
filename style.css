@@ -4,8 +4,49 @@ body {
     background-color: #fff8f0;
 }
 
-.birthday-button {
-    margin-top: 100px;
+.container {
+    margin-top: 50px;
+}
+
+#wordDisplay {
+    font-size: 3rem;
+    animation: zoom 1s forwards;
+}
+
+@keyframes zoom {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.cake {
+    font-size: 5rem;
+    margin: 30px auto;
+    position: relative;
+}
+
+.cake-eyes {
+    font-size: 2rem;
+}
+
+.cake-smile {
+    font-size: 2rem;
+}
+
+.rose {
+    font-size: 3rem;
+    animation: float 3s infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.response-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
 }
 
 button {
@@ -22,25 +63,15 @@ button:hover {
     background-color: #ff5c77;
 }
 
-.final-message {
-    margin-top: 50px;
-    font-size: 2rem;
+.fireworks {
+    font-size: 3rem;
+    animation: fireworks 0.5s infinite;
 }
 
-.roses {
-    margin-top: 20px;
-    font-size: 2rem;
-}
-
-.response-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 14s;
-}
-
-@keyframes fadeIn {
-    to { opacity: 1; }
+@keyframes fireworks {
+    0% { color: red; }
+    25% { color: yellow; }
+    50% { color: green; }
+    75% { color: blue; }
+    100% { color: red; }
 }
