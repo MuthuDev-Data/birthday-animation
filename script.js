@@ -33,7 +33,7 @@ function showNextWord() {
 }
 
 function startFireworks() {
-    fireworks.innerText = '🎆 🎇 🎆 🎇';
+    fireworks.style.display = 'block';
 }
 
 function showFinalMessage() {
@@ -65,4 +65,6 @@ yesButton.addEventListener('click', () => {
 noButton.addEventListener('click', () => {
     yesScale += 0.3;
     yesButton.style.transform = `scale(${yesScale})`;
+    noButton.style.zIndex = '1';
+    yesButton.style.zIndex = '0';
 });
