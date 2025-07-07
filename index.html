@@ -7,7 +7,7 @@
   <title>Happy Birthday Kolanthai!</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
+<audio id="bgMusic" src="Minnalvala(KoshalWorld.Com).mp3" loop></audio>
 <body>
   <div class="container">
     <!-- Sequential Words -->
@@ -61,10 +61,18 @@
       </div>
     </div>
   </div>
-<audio id="bgMusic" src="Minnalvala(KoshalWorld.Com).mp3" loop></audio>
-
+  
   <script src="script.js"></script>
   <script>
+  const bgMusic = document.getElementById('bgMusic');
+
+  // Play music ONLY when birthday button is clicked
+  const birthdayButton = document.querySelector('.birthday-button__button');
+  birthdayButton.addEventListener('click', () => {
+    bgMusic.play();
+  });
+
+  // YES/NO Button Logic
   setTimeout(() => {
     document.getElementById('response-buttons').style.opacity = '1';
   }, 14000);
@@ -83,24 +91,8 @@
   });
 
   noButton.addEventListener('click', () => {
-    yesScale += 0.3; // Increase size each NO click
+    yesScale += 0.3;
     yesButton.style.transform = `scale(${yesScale})`;
-
-    // Keep buttons side by side even as YES grows
-    yesButton.style.position = 'relative';
-    noButton.style.position = 'relative';
-    yesButton.style.zIndex = '1';
-    noButton.style.zIndex = '2'; // Keep NO button on top to stay clickable
-  });
-</script>
-  <script>
-  const bgMusic = document.getElementById('bgMusic');
-
-  // Trigger music on ANY click on the whole page
-  document.body.addEventListener('click', function playAudio() {
-    bgMusic.play();
-    // Remove the event listener after first play to avoid multiple triggers
-    document.body.removeEventListener('click', playAudio);
   });
 </script>
 
