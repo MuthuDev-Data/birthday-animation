@@ -1,4 +1,3 @@
-
 body {
   background-color: #fff8f0;
   display: flex;
@@ -14,7 +13,7 @@ body {
   position: relative;
 }
 
-/* Words Animation */
+/* Sequential Words */
 .word {
   font-size: 3rem;
   font-weight: bold;
@@ -36,11 +35,35 @@ body {
 }
 
 /* Cake Animation */
-/* Cake Face Fix */
+.cake-container {
+  margin-top: 30px;
+  opacity: 0;
+  animation: cakeBounce 1s forwards;
+  animation-delay: 6.8s;
+}
+
+.cake {
+  width: 100px;
+  height: 80px;
+  background-color: #ff99cc;
+  border-radius: 10px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.layer {
+  width: 100%;
+  height: 20px;
+  background-color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
 .face {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: absolute;
   width: 100%;
   top: 30%;
@@ -48,9 +71,8 @@ body {
 
 .eyes {
   display: flex;
-  justify-content: space-around;
-  width: 60%;
-  margin-bottom: 5px;
+  justify-content: center;
+  gap: 20px;
 }
 
 .eye {
@@ -65,9 +87,101 @@ body {
   height: 10px;
   border-bottom: 3px solid black;
   border-radius: 50%;
+  margin-top: 5px;
 }
 
-/* Roses Animation Fix */
+.candles {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  width: 100%;
+  top: -20px;
+}
+
+.candle {
+  width: 8px;
+  height: 20px;
+  background-color: orange;
+}
+
+@keyframes cakeBounce {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Realistic Fireworks */
+.firework {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  border-radius: 50%;
+}
+
+#firework1 { top: 20%; left: 20%; animation: firework-explode 1.5s 8s forwards; }
+#firework2 { top: 15%; left: 70%; animation: firework-explode 1.5s 8.5s forwards; }
+#firework3 { top: 30%; left: 50%; animation: firework-explode 1.5s 9s forwards; }
+
+@keyframes firework-explode {
+  0% {
+    box-shadow:
+      0 0 0px red,
+      0 0 0px yellow,
+      0 0 0px blue,
+      0 0 0px green,
+      0 0 0px orange,
+      0 0 0px pink;
+    transform: scale(0.5) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    box-shadow:
+      -50px -50px 0px red,
+      50px -50px 0px yellow,
+      -50px 50px 0px blue,
+      50px 50px 0px green,
+      -70px 0px 0px orange,
+      70px 0px 0px pink;
+    transform: scale(1.2) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    box-shadow:
+      -50px -50px 0px red,
+      50px -50px 0px yellow,
+      -50px 50px 0px blue,
+      50px 50px 0px green,
+      -70px 0px 0px orange,
+      70px 0px 0px pink;
+    transform: scale(1.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+/* Final Message */
+.final-message {
+  margin-top: 30px;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 9.5s;
+}
+
+.line {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 2.5rem;
+  opacity: 0;
+}
+
+#line1 { animation: fadeLine 1s forwards; animation-delay: 9.5s; }
+#line2 { animation: fadeLine 1s forwards; animation-delay: 11.5s; }
+
+@keyframes fadeLine {
+  to { opacity: 1; }
+}
+
+/* Roses Animation */
 .roses {
   margin-top: 20px;
   position: relative;
@@ -105,64 +219,4 @@ body {
   0% { transform: translateY(0) scale(1.5); }
   50% { transform: translateY(-10px) scale(1.5); }
   100% { transform: translateY(0) scale(1.5); }
-}
-
-/* Fireworks */
-.firework {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-}
-
-#firework1 { top: 20%; left: 20%; animation: firework 1s 8s forwards; }
-#firework2 { top: 15%; left: 70%; animation: firework 1s 8.5s forwards; }
-#firework3 { top: 30%; left: 50%; animation: firework 1s 9s forwards; }
-
-@keyframes firework {
-  0% { box-shadow: 0 0 0 red, 0 0 0 yellow, 0 0 0 blue; opacity: 1; }
-  50% { box-shadow: -40px -40px 0 red, 40px -40px 0 yellow, 0 40px 0 blue; opacity: 1; }
-  100% { box-shadow: -40px -40px 0 red, 40px -40px 0 yellow, 0 40px 0 blue; opacity: 0; }
-}
-
-/* Final Message */
-.final-message {
-  margin-top: 30px;
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-  animation-delay: 9.5s;
-}
-
-.line {
-  font-family: 'Brush Script MT', cursive;
-  font-size: 2.5rem;
-  opacity: 0;
-}
-
-#line1 { animation: fadeLine 1s forwards; animation-delay: 9.5s; }
-#line2 { animation: fadeLine 1s forwards; animation-delay: 11.5s; }
-
-@keyframes fadeLine {
-  to { opacity: 1; }
-}
-
-/* Roses */
-.roses {
-  margin-top: 20px;
-  position: relative;
-}
-
-.rose {
-  font-size: 2rem;
-  position: absolute;
-  opacity: 0;
-}
-
-#rose1 { left: 30%; animation: bloom 1s 10.5s forwards; }
-#rose2 { right: 30%; animation: bloom 1s 12.5s forwards; }
-#rose3 { top: -40px; left: 50%; transform: translateX(-50%); animation: bloom 1s 13.5s forwards; }
-
-@keyframes bloom {
-  0% { opacity: 0; transform: scale(0); }
-  100% { opacity: 1; transform: scale(1.5); }
 }
