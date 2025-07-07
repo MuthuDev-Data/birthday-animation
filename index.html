@@ -3,46 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Happy Birthday!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts for a festive look -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div class="container">
-    <div class="birthday-button">
+    <div class="birthday-button" id="birthdayBtnBox">
         <button class="birthday-button__button">🎂 Click Me 🎂</button>
     </div>
-
     <h1 id="wordDisplay"></h1>
-
     <div id="cake" class="cake" style="display: none;">
-        <div class="cake-body"></div>
         <div class="cake-eyes">👀</div>
         <div class="cake-smile">😊</div>
     </div>
-
     <div class="fireworks" id="fireworks"></div>
-
     <div class="final-message">
         <div class="line" id="line1" style="display: none;">Please take care cactus</div>
         <div class="line" id="line2" style="display: none;">Trust me</div>
-
         <div class="roses" id="roses" style="display: none;">
             <div class="rose">&#x1F339;</div>
             <div class="rose">&#x1F339;</div>
             <div class="rose">&#x1F339;</div>
         </div>
-
         <div class="response-buttons" id="response-buttons" style="margin-top: 20px; display: none;">
             <button id="yesButton">Yes</button>
             <button id="noButton">No</button>
         </div>
-
         <div id="result" style="margin-top: 20px;"></div>
     </div>
+    <button id="muteBtn" aria-label="Mute/unmute music">🔊</button>
 </div>
-
 <audio id="bgMusic" src="Minnalvala(KoshalWorld.Com).mp3" loop></audio>
-
 <script src="script.js"></script>
 </body>
 </html>
