@@ -95,7 +95,7 @@
         yesButton.style.transform = `scale(${yesScale})`;
         noButton.style.transform = `scale(${noScale})`;
 
-        if (yesScale >= 10) {  // When YES button is huge
+        if (yesScale >= 10) {
           clearInterval(growInterval);
           result.innerHTML = '<h3>Okay, YES is taking over! Please click it now! 😂</h3>';
         }
@@ -103,7 +103,6 @@
     }
   });
 </script>
-
 
 </body>
 
