@@ -188,15 +188,18 @@ body {
 }
 
 /* Roses Animation */
+/* Roses Animation */
 .roses {
   margin-top: 20px;
   position: relative;
+  height: 100px; /* Ensure there is space */
 }
 
 .rose {
   font-size: 2rem;
   position: absolute;
   opacity: 0;
+  animation-fill-mode: forwards;
 }
 
 #rose1 {
@@ -210,7 +213,7 @@ body {
 }
 
 #rose3 {
-  top: -40px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   animation: bloom 1s 15.5s forwards, float 3s 15.5s infinite ease-in-out;
