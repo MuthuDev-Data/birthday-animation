@@ -61,10 +61,7 @@
       </div>
     </div>
   </div>
-<!-- Add this near your YES/NO buttons -->
-<button id="muteButton">Mute/Unmute</button>
-
-<audio id="bgMusic" src="minnavala.mp3" autoplay loop></audio>
+<audio id="bgMusic" src="Minnalvala(KoshalWorld.Com).mp3" loop></audio>
 
   <script src="script.js"></script>
   <script>
@@ -98,13 +95,12 @@
 </script>
   <script>
   const bgMusic = document.getElementById('bgMusic');
-  const muteButton = document.getElementById('muteButton');
 
-  muteButton.addEventListener('click', () => {
-    bgMusic.muted = !bgMusic.muted;
+  // Play music when first button is clicked
+  document.querySelector('.birthday-button__button').addEventListener('click', () => {
+    bgMusic.play();
   });
 </script>
-
 
 </body>
 
