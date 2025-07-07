@@ -12,27 +12,34 @@ body {
   text-align: center;
 }
 
-/* Words Animation */
 .word {
   font-size: 3rem;
   font-weight: bold;
-  opacity: 0;
-  transform: scale(0);
-  animation: zoomIn 1s forwards;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%) scale(0);
+  transform: translateX(-50%);
+  opacity: 0;
 }
 
-#word1 { animation-delay: 0s; }
-#word2 { animation-delay: 2s; }
-#word3 { animation-delay: 4s; }
+#word1 {
+  animation: showHide 2s forwards;
+}
 
-@keyframes zoomIn {
-  to {
-    opacity: 1;
-    transform: translateX(-50%) scale(1);
-  }
+#word2 {
+  animation: showHide 2s forwards;
+  animation-delay: 2.2s;
+}
+
+#word3 {
+  animation: showHide 2s forwards;
+  animation-delay: 4.4s;
+}
+
+@keyframes showHide {
+  0% { opacity: 0; transform: translateX(-50%) scale(0); }
+  10% { opacity: 1; transform: translateX(-50%) scale(1); }
+  90% { opacity: 1; transform: translateX(-50%) scale(1); }
+  100% { opacity: 0; transform: translateX(-50%) scale(0); }
 }
 
 .cake-container {
@@ -41,7 +48,7 @@ body {
   opacity: 0;
   transform: translateY(100px);
   animation: cakeUp 1s forwards;
-  animation-delay: 6s;
+  animation-delay: 6.8s;
 }
 
 @keyframes cakeUp {
@@ -92,7 +99,6 @@ body {
   left: 45%;
 }
 
-/* Fireworks Animation */
 .fireworks {
   width: 15px;
   height: 15px;
@@ -104,17 +110,17 @@ body {
 
 #firework1 {
   top: -50px; left: 20%;
-  animation: pop 0.5s 7s forwards;
+  animation: pop 0.5s 8s forwards;
 }
 
 #firework2 {
   top: -60px; left: 70%;
-  animation: pop 0.5s 7.5s forwards;
+  animation: pop 0.5s 8.5s forwards;
 }
 
 #firework3 {
   top: -40px; left: 50%;
-  animation: pop 0.5s 8s forwards;
+  animation: pop 0.5s 9s forwards;
 }
 
 @keyframes pop {
@@ -123,12 +129,11 @@ body {
   100% { opacity: 0; transform: scale(0); }
 }
 
-/* Final Message */
 .final-message {
   margin-top: 30px;
   opacity: 0;
   animation: fadeIn 1s forwards;
-  animation-delay: 9s;
+  animation-delay: 9.5s;
   position: relative;
 }
 
@@ -138,14 +143,13 @@ body {
   opacity: 0;
 }
 
-#line1 { animation: fadeLine 1s forwards; animation-delay: 9s; }
-#line2 { animation: fadeLine 1s forwards; animation-delay: 11s; }
+#line1 { animation: fadeLine 1s forwards; animation-delay: 9.5s; }
+#line2 { animation: fadeLine 1s forwards; animation-delay: 11.5s; }
 
 @keyframes fadeLine {
   to { opacity: 1; }
 }
 
-/* Roses Animation */
 .rose {
   width: 20px;
   height: 20px;
@@ -157,12 +161,12 @@ body {
 
 #rose1 {
   left: 30%;
-  animation: bloom 1s 10s forwards;
+  animation: bloom 1s 10.5s forwards;
 }
 
 #rose2 {
   right: 30%;
-  animation: bloom 1s 12s forwards;
+  animation: bloom 1s 12.5s forwards;
 }
 
 @keyframes bloom {
