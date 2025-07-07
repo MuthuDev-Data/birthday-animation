@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Happy Birthday!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Fonts for a festive look -->
+    <!-- Festive Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,11 +14,20 @@
         <button class="birthday-button__button">🎂 Click Me 🎂</button>
     </div>
     <h1 id="wordDisplay"></h1>
+    <!-- Animated Cake -->
     <div id="cake" class="cake" style="display: none;">
-        <div class="cake-eyes">👀</div>
-        <div class="cake-smile">😊</div>
+        <div class="cake-base"></div>
+        <div class="cake-layer"></div>
+        <div class="cake-face">
+            <div class="cake-eyes"></div>
+            <div class="cake-smile"></div>
+        </div>
+        <div class="cake-candle">
+            <div class="candle-flame"></div>
+        </div>
     </div>
-    <div class="fireworks" id="fireworks"></div>
+    <!-- Fireworks Canvas -->
+    <canvas id="fireworks" class="fireworks" style="display:none;"></canvas>
     <div class="final-message">
         <div class="line" id="line1" style="display: none;">Please take care cactus</div>
         <div class="line" id="line2" style="display: none;">Trust me</div>
