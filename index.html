@@ -96,9 +96,11 @@
   <script>
   const bgMusic = document.getElementById('bgMusic');
 
-  // Play music when first button is clicked
-  document.querySelector('.birthday-button__button').addEventListener('click', () => {
+  // Trigger music on ANY click on the whole page
+  document.body.addEventListener('click', function playAudio() {
     bgMusic.play();
+    // Remove the event listener after first play to avoid multiple triggers
+    document.body.removeEventListener('click', playAudio);
   });
 </script>
 
