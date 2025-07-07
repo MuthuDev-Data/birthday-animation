@@ -11,6 +11,7 @@ body {
 #wordDisplay {
     font-size: 3rem;
     animation: zoom 1s forwards;
+    margin: 20px auto;
 }
 
 @keyframes zoom {
@@ -19,22 +20,37 @@ body {
 }
 
 .cake {
-    font-size: 5rem;
+    width: 150px;
+    height: 150px;
+    background-color: pink;
+    border-radius: 20px;
     margin: 30px auto;
     position: relative;
 }
 
 .cake-eyes {
+    position: absolute;
+    top: 30px;
+    left: 40px;
     font-size: 2rem;
 }
 
 .cake-smile {
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
     font-size: 2rem;
 }
 
 .rose {
     font-size: 3rem;
     animation: float 3s infinite;
+}
+
+.roses {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 @keyframes float {
@@ -64,14 +80,15 @@ button:hover {
 }
 
 .fireworks {
-    font-size: 3rem;
-    animation: fireworks 0.5s infinite;
+    width: 100%;
+    height: 150px;
+    background: radial-gradient(circle, red, yellow, green, blue);
+    animation: fireworks 1s infinite;
+    margin: 20px auto;
 }
 
 @keyframes fireworks {
-    0% { color: red; }
-    25% { color: yellow; }
-    50% { color: green; }
-    75% { color: blue; }
-    100% { color: red; }
+    0% { background: radial-gradient(circle, red, yellow, green, blue); }
+    50% { background: radial-gradient(circle, blue, green, yellow, red); }
+    100% { background: radial-gradient(circle, red, yellow, green, blue); }
 }
