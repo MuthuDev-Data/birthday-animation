@@ -1,5 +1,6 @@
+
 body {
-  background-color: #f8e1f4;
+  background-color: #fff8f0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +14,7 @@ body {
   position: relative;
 }
 
+/* Words Animation */
 .word {
   font-size: 3rem;
   font-weight: bold;
@@ -33,6 +35,7 @@ body {
   100% { opacity: 0; transform: translateX(-50%) scale(0); }
 }
 
+/* Cake Animation */
 .cake-container {
   margin-top: 30px;
   opacity: 0;
@@ -40,8 +43,58 @@ body {
   animation-delay: 6.8s;
 }
 
-.cake-emoji {
-  font-size: 5rem;
+.cake {
+  width: 100px;
+  height: 80px;
+  background-color: #ff99cc;
+  border-radius: 10px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.layer {
+  width: 100%;
+  height: 20px;
+  background-color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.face {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 40%;
+}
+
+.eye {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.smile {
+  width: 30px;
+  height: 10px;
+  border-bottom: 3px solid black;
+  border-radius: 50%;
+}
+
+.candles {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  width: 100%;
+  top: -20px;
+}
+
+.candle {
+  width: 8px;
+  height: 20px;
+  background-color: orange;
 }
 
 @keyframes cakeBounce {
@@ -53,20 +106,19 @@ body {
 /* Fireworks */
 .firework {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 0;
+  height: 0;
   border-radius: 50%;
-  background-color: transparent;
 }
 
-#firework1 { top: 20%; left: 20%; animation: explode 0.6s 8s forwards; }
-#firework2 { top: 15%; left: 70%; animation: explode 0.6s 8.5s forwards; }
-#firework3 { top: 30%; left: 50%; animation: explode 0.6s 9s forwards; }
+#firework1 { top: 20%; left: 20%; animation: firework 1s 8s forwards; }
+#firework2 { top: 15%; left: 70%; animation: firework 1s 8.5s forwards; }
+#firework3 { top: 30%; left: 50%; animation: firework 1s 9s forwards; }
 
-@keyframes explode {
-  0% { box-shadow: 0 0 0 red, 0 0 0 yellow, 0 0 0 blue; }
-  50% { box-shadow: -30px -30px 0 red, 30px -30px 0 yellow, 0 30px 0 blue; opacity: 1; }
-  100% { box-shadow: -30px -30px 0 red, 30px -30px 0 yellow, 0 30px 0 blue; opacity: 0; }
+@keyframes firework {
+  0% { box-shadow: 0 0 0 red, 0 0 0 yellow, 0 0 0 blue; opacity: 1; }
+  50% { box-shadow: -40px -40px 0 red, 40px -40px 0 yellow, 0 40px 0 blue; opacity: 1; }
+  100% { box-shadow: -40px -40px 0 red, 40px -40px 0 yellow, 0 40px 0 blue; opacity: 0; }
 }
 
 /* Final Message */
