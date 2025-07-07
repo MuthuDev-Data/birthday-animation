@@ -48,7 +48,7 @@ function showFinalMessage() {
     }, 1500);
 }
 
-birthdayButton = document.querySelector('.birthday-button__button');
+const birthdayButton = document.querySelector('.birthday-button__button');
 birthdayButton.addEventListener('click', () => {
     bgMusic.play();
     document.querySelector('.birthday-button').style.display = 'none';
