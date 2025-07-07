@@ -7,26 +7,34 @@
 </head>
 <body>
 
-<div class="birthday-button">
-    <button class="birthday-button__button">🎂 Click Me 🎂</button>
-</div>
+<div class="container">
+    <h1 id="wordDisplay"></h1>
 
-<div class="final-message">
-    <div class="line" id="line1">Please take care cactus</div>
-    <div class="line" id="line2">Trust me</div>
-
-    <div class="roses">
-        <div class="rose" id="rose1">&#x1F339;</div>
-        <div class="rose" id="rose2">&#x1F339;</div>
-        <div class="rose" id="rose3">&#x1F339;</div>
+    <div id="cake" class="cake" style="display: none;">
+        🎂
+        <div class="cake-eyes">👀</div>
+        <div class="cake-smile">😊</div>
     </div>
 
-    <div class="response-buttons" id="response-buttons" style="margin-top: 20px; opacity: 0;">
-        <button id="yesButton">Yes</button>
-        <button id="noButton">No</button>
-    </div>
+    <div class="fireworks" id="fireworks"></div>
 
-    <div id="result" style="margin-top: 20px;"></div>
+    <div class="final-message">
+        <div class="line" id="line1" style="display: none;">Please take care cactus</div>
+        <div class="line" id="line2" style="display: none;">Trust me</div>
+
+        <div class="roses" id="roses" style="display: none;">
+            <div class="rose">&#x1F339;</div>
+            <div class="rose">&#x1F339;</div>
+            <div class="rose">&#x1F339;</div>
+        </div>
+
+        <div class="response-buttons" id="response-buttons" style="margin-top: 20px; display: none;">
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+
+        <div id="result" style="margin-top: 20px;"></div>
+    </div>
 </div>
 
 <audio id="bgMusic" src="Minnalvala(KoshalWorld.Com).mp3" loop></audio>
