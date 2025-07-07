@@ -16,23 +16,23 @@
     <div class="word" id="word3">Kolanthai</div>
 
     <!-- Cake -->
-    <div class="cake-container">
-      <div class="cake">
-        <div class="layer"></div>
-        <div class="face">
-          <div class="eyes">
-            <div class="eye"></div>
-            <div class="eye"></div>
-          </div>
-          <div class="smile"></div>
-        </div>
-        <div class="candles">
-          <div class="candle"></div>
-          <div class="candle"></div>
-          <div class="candle"></div>
-        </div>
+    <div class="cake-container" id="cake-container">
+  <div class="cake">
+    <div class="layer"></div>
+    <div class="face">
+      <div class="eyes">
+        <div class="eye"></div>
+        <div class="eye"></div>
       </div>
+      <div class="smile"></div>
     </div>
+    <div class="candles">
+      <div class="candle"></div>
+      <div class="candle"></div>
+      <div class="candle"></div>
+    </div>
+  </div>
+</div>
 
     <!-- Fireworks -->
     <div class="firework" id="firework1"></div>
@@ -55,6 +55,12 @@ div>
   </div>
 
   <script src="script.js"></script>
+  <script>
+  // Hide cake before showing final message
+  setTimeout(() => {
+    document.getElementById('cake-container').classList.add('hide-cake');
+  }, 10 * 1000); // Hide cake at 10 seconds
+</script>
 </body>
 
 </html>
