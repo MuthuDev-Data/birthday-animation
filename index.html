@@ -82,8 +82,14 @@
   });
 
   noButton.addEventListener('click', () => {
-    yesScale += 0.3; // Increase size with every NO click
+    yesScale += 0.3; // Increase size each NO click
     yesButton.style.transform = `scale(${yesScale})`;
+
+    // Keep buttons side by side even as YES grows
+    yesButton.style.position = 'relative';
+    noButton.style.position = 'relative';
+    yesButton.style.zIndex = '1';
+    noButton.style.zIndex = '2'; // Keep NO button on top to stay clickable
   });
 </script>
 
