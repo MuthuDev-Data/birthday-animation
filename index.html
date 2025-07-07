@@ -1,101 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Kolanthai!</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<audio id="bgMusic" src="Minnalvala(KoshalWorld.Com).mp3" loop></audio>
 <body>
-  <div class="container">
-    <!-- Sequential Words -->
-    <div class="word" id="word1">Happy</div>
-    <div class="word" id="word2">Birthday</div>
-    <div class="word" id="word3">Kolanthai</div>
 
-    <!-- Cake -->
-    <div class="cake-container" id="cake-container">
-  <div class="cake">
-    <div class="layer"></div>
-    <div class="face">
-      <div class="eyes">
-        <div class="eye"></div>
-        <div class="eye"></div>
-      </div>
-      <div class="smile"></div>
-    </div>
-    <div class="candles">
-      <div class="candle"></div>
-      <div class="candle"></div>
-      <div class="candle"></div>
-    </div>
-  </div>
+<div class="birthday-button">
+    <button class="birthday-button__button">🎂 Click Me 🎂</button>
 </div>
 
-    <!-- Fireworks -->
-    <div class="firework" id="firework1"></div>
-    <div class="firework" id="firework2"></div>
-    <div class="firework" id="firework3"></div>
+<div class="final-message">
+    <div class="line" id="line1">Please take care cactus</div>
+    <div class="line" id="line2">Trust me</div>
 
-    <!-- Final Message -->
-    <div class="final-message">
-  <div class="line" id="line1">Please take care cactus</div>
-  <div class="line" id="line2">Trust me</div>
+    <div class="roses">
+        <div class="rose" id="rose1">&#x1F339;</div>
+        <div class="rose" id="rose2">&#x1F339;</div>
+        <div class="rose" id="rose3">&#x1F339;</div>
+    </div>
 
-  <div class="roses">
-    <div class="rose" id="rose1">&#x1F339;</div>
-    <div class="rose" id="rose2">&#x1F339;</div>
-    <div class="rose" id="rose3">&#x1F339;</div>
-  </div>
+    <div class="response-buttons" id="response-buttons" style="margin-top: 20px; opacity: 0;">
+        <button id="yesButton">Yes</button>
+        <button id="noButton">No</button>
+    </div>
 
-  <div class="response-buttons" id="response-buttons" style="margin-top: 20px; opacity: 0;">
-    <button id="yesButton">Yes</button>
-    <button id="noButton">No</button>
-  </div>
-
-  <div id="result" style="margin-top: 20px;"></div>
+    <div id="result" style="margin-top: 20px;"></div>
 </div>
 
-      </div>
-    </div>
-  </div>
-  
-  <script src="script.js"></script>
-  <script>
-  const bgMusic = document.getElementById('bgMusic');
+<audio id="bgMusic" src="Minnalvala(KoshalWorld.Com).mp3" loop></audio>
 
-  // Play music ONLY when birthday button is clicked
-  const birthdayButton = document.querySelector('.birthday-button__button');
-  birthdayButton.addEventListener('click', () => {
-    bgMusic.play();
-  });
-
-  // YES/NO Button Logic
-  setTimeout(() => {
-    document.getElementById('response-buttons').style.opacity = '1';
-  }, 14000);
-
-  const yesButton = document.getElementById('yesButton');
-  const noButton = document.getElementById('noButton');
-  const result = document.getElementById('result');
-
-  let yesScale = 1.5;
-
-  yesButton.style.transform = `scale(${yesScale})`;
-
-  yesButton.addEventListener('click', () => {
-    result.innerHTML = '<h3>Here’s your chocolate! 🍫🍫🍫</h3>';
-    document.getElementById('response-buttons').style.display = 'none';
-  });
-
-  noButton.addEventListener('click', () => {
-    yesScale += 0.3;
-    yesButton.style.transform = `scale(${yesScale})`;
-  });
-</script>
-
+<script src="script.js"></script>
 </body>
-
 </html>
