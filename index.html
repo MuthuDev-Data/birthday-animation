@@ -72,35 +72,18 @@
   const noButton = document.getElementById('noButton');
   const result = document.getElementById('result');
 
-  let growInterval;
   let yesScale = 1.5;
-  let noScale = 1.5;
 
   yesButton.style.transform = `scale(${yesScale})`;
-  noButton.style.transform = `scale(${noScale})`;
 
   yesButton.addEventListener('click', () => {
-    clearInterval(growInterval);
     result.innerHTML = '<h3>Here’s your chocolate! 🍫🍫🍫</h3>';
     document.getElementById('response-buttons').style.display = 'none';
   });
 
   noButton.addEventListener('click', () => {
-    result.innerHTML = '<h3>Baby is crying! 😢 Please say YES!</h3>';
-    if (!growInterval) {
-      growInterval = setInterval(() => {
-        yesScale += 0.05;
-        noScale -= 0.02;
-
-        yesButton.style.transform = `scale(${yesScale})`;
-        noButton.style.transform = `scale(${noScale})`;
-
-        if (yesScale >= 10) {
-          clearInterval(growInterval);
-          result.innerHTML = '<h3>Okay, YES is taking over! Please click it now! 😂</h3>';
-        }
-      }, 100);
-    }
+    yesScale += 0.3; // Increase size with every NO click
+    yesButton.style.transform = `scale(${yesScale})`;
   });
 </script>
 
