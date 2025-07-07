@@ -1,260 +1,46 @@
 body {
-  background-color: #fff8f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
-}
-.container {
-  text-align: center;
-  position: relative;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fff8f0;
 }
 
-/* Sequential Words */
-.word {
-  font-size: 3rem;
-  font-weight: bold;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-}
-
-#word1 { animation: showHide 2s forwards; }
-#word2 { animation: showHide 2s forwards; animation-delay: 2.2s; }
-#word3 { animation: showHide 2s forwards; animation-delay: 4.4s; }
-
-@keyframes showHide {
-  0% { opacity: 0; transform: translateX(-50%) scale(0); }
-  10% { opacity: 1; transform: translateX(-50%) scale(1); }
-  90% { opacity: 1; transform: translateX(-50%) scale(1); }
-  100% { opacity: 0; transform: translateX(-50%) scale(0); }
-}
-
-/* Cake Animation */
-.cake-container {
-  margin-top: 30px;
-  opacity: 0;
-  animation: cakeBounce 1s forwards;
-  animation-delay: 6.8s;
-  transition: opacity 1s ease-in-out;
-}
-
-.hide-cake {
-  opacity: 0 !important;
-  transition: opacity 1s ease-in-out;
-}
-
-.cake {
-  width: 120px;
-  height: 100px;
-  background: linear-gradient(to top, #ff8da1, #ffbed1);
-  border-radius: 15px;
-  margin: 0 auto;
-  position: relative;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.layer {
-  width: 100%;
-  height: 25px;
-  background-color: #fff;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
-.face {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
-  top: 35%;
-}
-
-.eyes {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-}
-
-.eye {
-  width: 12px;
-  height: 12px;
-  background-color: black;
-  border-radius: 50%;
-}
-
-.smile {
-  width: 40px;
-  height: 15px;
-  border-bottom: 4px solid black;
-  border-radius: 0 0 50% 50%;
-  margin-top: 8px;
-}
-
-.candles {
-  display: flex;
-  justify-content: space-around;
-  position: absolute;
-  width: 100%;
-  top: -25px;
-}
-
-.candle {
-  width: 10px;
-  height: 25px;
-  background-color: orange;
-}
-
-@keyframes cakeBounce {
-  0% { transform: scale(0.5); opacity: 0; }
-  50% { transform: scale(1.2); opacity: 1; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-/* Realistic Fireworks */
-.firework {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: transparent;
-  border-radius: 50%;
-}
-
-#firework1 { top: 20%; left: 20%; animation: firework-explode 1.5s 8s forwards; }
-#firework2 { top: 15%; left: 70%; animation: firework-explode 1.5s 8.5s forwards; }
-#firework3 { top: 30%; left: 50%; animation: firework-explode 1.5s 9s forwards; }
-
-@keyframes firework-explode {
-  0% {
-    box-shadow:
-      0 0 0px red,
-      0 0 0px yellow,
-      0 0 0px blue,
-      0 0 0px green,
-      0 0 0px orange,
-      0 0 0px pink;
-    transform: scale(0.5) rotate(0deg);
-    opacity: 1;
-  }
-  50% {
-    box-shadow:
-      -50px -50px 0px red,
-      50px -50px 0px yellow,
-      -50px 50px 0px blue,
-      50px 50px 0px green,
-      -70px 0px 0px orange,
-      70px 0px 0px pink;
-    transform: scale(1.2) rotate(180deg);
-    opacity: 1;
-  }
-  100% {
-    box-shadow:
-      -50px -50px 0px red,
-      50px -50px 0px yellow,
-      -50px 50px 0px blue,
-      50px 50px 0px green,
-      -70px 0px 0px orange,
-      70px 0px 0px pink;
-    transform: scale(1.5) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-
-.final-message {
-  margin-top: 30px;
-  opacity: 1;
-  position: relative;
-}
-
-.line {
-  font-family: 'Brush Script MT', cursive;
-  font-size: 2.5rem;
-  opacity: 0;
-  position: relative;
-}
-
-#line1 {
-  animation: fadeLine 1s forwards;
-  animation-delay: 10.5s;
-}
-
-#line2 {
-  animation: fadeLine 1s forwards;
-  animation-delay: 12.5s;
-}
-
-@keyframes fadeLine {
-  to { opacity: 1; }
-}
-
-/* Roses Animation */
-/* Roses Animation */
-.roses {
-  margin-top: 20px;
-  position: relative;
-  height: 100px; /* Ensure there is space */
-}
-
-.rose {
-  font-size: 2rem;
-  position: absolute;
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-#rose1 {
-  left: 30%;
-  animation: bloom 1s 14.5s forwards, float 3s 14.5s infinite ease-in-out;
-}
-
-#rose2 {
-  right: 30%;
-  animation: bloom 1s 15s forwards, float 3s 15s infinite ease-in-out;
-}
-
-#rose3 {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: bloom 1s 15.5s forwards, float 3s 15.5s infinite ease-in-out;
-}
-
-@keyframes bloom {
-  0% { opacity: 0; transform: scale(0); }
-  100% { opacity: 1; transform: scale(1.5); }
-}
-
-@keyframes float {
-  0% { transform: translateY(0) scale(1.5); }
-  50% { transform: translateY(-10px) scale(1.5); }
-  100% { transform: translateY(0) scale(1.5); }
-}
-.response-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 40px; /* Increased gap to prevent overlap */
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-  animation-delay: 14s;
+.birthday-button {
+    margin-top: 100px;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  background-color: #ff8da1;
-  border: none;
-  border-radius: 5px;
-  transition: transform 0.3s, background-color 0.3s;
-  z-index: 1; /* Always visible and clickable */
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: #ff8da1;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
-  background-color: #ff5c77;
+    background-color: #ff5c77;
+}
+
+.final-message {
+    margin-top: 50px;
+    font-size: 2rem;
+}
+
+.roses {
+    margin-top: 20px;
+    font-size: 2rem;
+}
+
+.response-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 14s;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
 }
